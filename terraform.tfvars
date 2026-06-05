@@ -1,7 +1,7 @@
 aws_region = "eu-west-1"
 
 vpc_name = "cmtr-b56386db-01-vpc"
-vpc_cidr  = "10.10.0.0/16"
+vpc_cidr = "10.10.0.0/16"
 
 subnet1_name       = "cmtr-b56386db-01-subnet-public-a"
 subnet1_cidr       = "10.10.1.0/24"
