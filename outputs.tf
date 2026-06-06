@@ -1,29 +1,19 @@
-output "iam_group_name" {
-  description = "Name of the created IAM group"
-  value       = aws_iam_group.this.name
+output "ssh_security_group_id" {
+  description = "ID of the SSH security group"
+  value       = aws_security_group.ssh.id
 }
 
-output "iam_policy_arn" {
-  description = "ARN of the created custom IAM policy"
-  value       = aws_iam_policy.this.arn
+output "public_http_security_group_id" {
+  description = "ID of the public HTTP security group"
+  value       = aws_security_group.public_http.id
 }
 
-output "iam_role_name" {
-  description = "Name of the created IAM role"
-  value       = aws_iam_role.this.name
+output "private_http_security_group_id" {
+  description = "ID of the private HTTP security group"
+  value       = aws_security_group.private_http.id
 }
 
-output "iam_role_arn" {
-  description = "ARN of the created IAM role"
-  value       = aws_iam_role.this.arn
-}
-
-output "iam_instance_profile_name" {
-  description = "Name of the created IAM instance profile"
-  value       = aws_iam_instance_profile.this.name
-}
-
-output "iam_instance_profile_arn" {
-  description = "ARN of the created IAM instance profile"
-  value       = aws_iam_instance_profile.this.arn
+output "public_instance_ip" {
+  description = "Public IP of the public EC2 instance"
+  value       = data.aws_instance.public.public_ip
 }
