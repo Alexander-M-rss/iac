@@ -1,24 +1,29 @@
 variable "aws_region" {
-  description = "AWS region where all resources will be created"
+  description = "The AWS region where resources are located"
   type        = string
 }
 
 variable "project_id" {
-  description = "Project identifier used for tagging all resources and looking up pre-created resources"
+  description = "The project identifier used for tagging"
   type        = string
 }
 
-variable "aws_launch_template_name" {
-  description = "Name of the EC2 Launch Template to create"
+variable "vpc_name" {
+  description = "The name of the VPC to discover"
   type        = string
 }
 
-variable "aws_asg_name" {
-  description = "Name of the Auto Scaling Group to create"
+variable "public_subnet_name" {
+  description = "The name of the public subnet to discover"
   type        = string
 }
 
-variable "load_balancer_name" {
-  description = "Name of the Application Load Balancer to create"
+variable "security_group_name" {
+  description = "The name of the security group to discover"
+  type        = string
+}
+
+variable "ec2_instance_name" {
+  description = "The name of the EC2 instance to create"
   type        = string
 }
