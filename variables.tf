@@ -3,52 +3,67 @@ variable "aws_region" {
   type        = string
 }
 
-variable "vpc_id" {
-  description = "ID of the pre-existing VPC"
+variable "vpc_name" {
+  description = "Name tag for the VPC"
   type        = string
 }
 
-variable "public_subnet_id" {
-  description = "ID of the pre-existing public subnet"
+variable "vpc_cidr" {
+  description = "CIDR block for the VPC"
   type        = string
 }
 
-variable "private_subnet_id" {
-  description = "ID of the pre-existing private subnet"
+variable "subnet1_name" {
+  description = "Name tag for the first public subnet"
   type        = string
 }
 
-variable "public_instance_id" {
-  description = "ID of the pre-existing public EC2 instance"
+variable "subnet1_cidr" {
+  description = "CIDR block for the first public subnet"
   type        = string
 }
 
-variable "private_instance_id" {
-  description = "ID of the pre-existing private EC2 instance"
+variable "availability_zone1" {
+  description = "Availability Zone for the first public subnet"
   type        = string
 }
 
-variable "ssh_security_group_name" {
-  description = "Name for the SSH security group"
+variable "subnet2_name" {
+  description = "Name tag for the second public subnet"
   type        = string
 }
 
-variable "public_http_security_group_name" {
-  description = "Name for the public HTTP security group"
+variable "subnet2_cidr" {
+  description = "CIDR block for the second public subnet"
   type        = string
 }
 
-variable "private_http_security_group_name" {
-  description = "Name for the private HTTP security group"
+variable "availability_zone2" {
+  description = "Availability Zone for the second public subnet"
   type        = string
 }
 
-variable "project_id" {
-  description = "Project ID used for tagging resources"
+variable "subnet3_name" {
+  description = "Name tag for the third public subnet"
   type        = string
 }
 
-variable "allowed_ip_range" {
-  description = "List of IP CIDR ranges allowed to access the infrastructure"
-  type        = list(string)
+variable "subnet3_cidr" {
+  description = "CIDR block for the third public subnet"
+  type        = string
+}
+
+variable "availability_zone3" {
+  description = "Availability Zone for the third public subnet"
+  type        = string
+}
+
+variable "internet_gateway" {
+  description = "Name tag for the Internet Gateway"
+  type        = string
+}
+
+variable "routing_table" {
+  description = "Name tag for the route table"
+  type        = string
 }
