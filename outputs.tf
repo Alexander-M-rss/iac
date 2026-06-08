@@ -1,39 +1,29 @@
-output "alb_dns_name" {
-  description = "DNS name of the Application Load Balancer"
-  value       = aws_lb.this.dns_name
+output "vpc_id" {
+  description = "ID of the created VPC"
+  value       = module.network.vpc_id
 }
 
-output "alb_arn" {
-  description = "ARN of the Application Load Balancer"
-  value       = aws_lb.this.arn
+output "subnet_ids" {
+  description = "Map of subnet name to subnet ID"
+  value       = module.network.subnet_ids
 }
 
-output "blue_target_group_arn" {
-  description = "ARN of the Blue target group"
-  value       = aws_lb_target_group.blue.arn
+output "ssh_security_group_id" {
+  description = "ID of the SSH security group"
+  value       = module.network_security.ssh_security_group_id
 }
 
-output "green_target_group_arn" {
-  description = "ARN of the Green target group"
-  value       = aws_lb_target_group.green.arn
+output "public_http_security_group_id" {
+  description = "ID of the public HTTP security group"
+  value       = module.network_security.public_http_security_group_id
 }
 
-output "blue_launch_template_id" {
-  description = "ID of the Blue launch template"
-  value       = aws_launch_template.blue.id
+output "private_http_security_group_id" {
+  description = "ID of the private HTTP security group"
+  value       = module.network_security.private_http_security_group_id
 }
 
-output "green_launch_template_id" {
-  description = "ID of the Green launch template"
-  value       = aws_launch_template.green.id
-}
-
-output "blue_asg_name" {
-  description = "Name of the Blue Auto Scaling group"
-  value       = aws_autoscaling_group.blue.name
-}
-
-output "green_asg_name" {
-  description = "Name of the Green Auto Scaling group"
-  value       = aws_autoscaling_group.green.name
+output "load_balancer_dns_name" {
+  description = "DNS name of the Application Load Balancer — use this to access the application"
+  value       = module.application.load_balancer_dns_name
 }
